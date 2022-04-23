@@ -5,3 +5,5 @@
 > 做个快乐的工程师
 
 - 个人网站: https://shangzongyu.github.io/
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
