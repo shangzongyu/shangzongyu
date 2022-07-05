@@ -1,8 +1,8 @@
 ## Hello, I'm  TomShine
 
-> 做个快乐的工程师
+> I'm Happy.
 
-- 个人网站: https://shangzongyu.github.io/
+- Personal Website: https://shangzongyu.github.io/
 
 [![My Skills](https://skillicons.dev/icons?i=c,cpp,css,emacs,flask,git,go,idea,linux,lua,md,mysql,nginx,py,redis,vim,vscode)](https://skillicons.dev)
 
