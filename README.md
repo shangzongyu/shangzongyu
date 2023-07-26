@@ -2,7 +2,9 @@
 
 > I'm Happy.
 
-- Personal Website: https://shangzongyu.github.io/
+- Personal Website:
+  - https://shangzongyu.github.io/
+  - https://tomshine.hashnode.dev/
 
 [![My Skills](https://skillicons.dev/icons?i=c,cpp,css,emacs,flask,git,go,idea,linux,lua,md,mysql,nginx,py,redis,vim,vscode)](https://skillicons.dev)
 
