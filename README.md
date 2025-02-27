@@ -19,3 +19,5 @@
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shangzongyu)
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=shangzongyu)
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=page.id&left_color=green&right_color=red)
