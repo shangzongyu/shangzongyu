@@ -22,5 +22,6 @@
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=shangzongyu&left_color=green&right_color=red)
 
-
 ![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=shangzongyu)
+
+![GitHub Streak](https://streak-stats.demolab.com/?user=shangzongyu)
