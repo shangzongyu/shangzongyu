@@ -2,9 +2,6 @@
 
 > I'm Happy.
 
-- Personal Website:
-  - https://tomshine.hashnode.dev/
-
 [![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,vscode,idea,qt,md,redis,mysql,sqlite,postgres,nginx,flask)](https://skillicons.dev)
 
 
