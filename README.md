@@ -1,6 +1,6 @@
-## Hello, I'm  TomShine
+## Hello, I'm TomShine
 
-> I'm Happy.
+> 不忘初心。
 
 [![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,vscode,idea,qt,md,redis,mysql,sqlite,postgres,nginx,flask)](https://skillicons.dev)
 
