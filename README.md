@@ -2,7 +2,7 @@
 
 > 不忘初心。
 
-[![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,vscode,idea,qt,md,redis,mysql,sqlite,postgres,nginx,flask)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian)](https://skillicons.dev)
 
 
 <img align="left" src="https://github-readme-stats.vercel.app/api?username=shangzongyu&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff&hide_title=true" />
