@@ -9,11 +9,6 @@
 
 📕 &nbsp;**Latest Blog Posts**
 <!-- BLOG-POST-LIST:START -->
-- [Arts 缘起](https://tomshine.hashnode.dev/arts)
-- [My Github 2024 Insight](https://tomshine.hashnode.dev/my-github-2024-insight)
-- [工具推荐：markitdown - 转换文件为 Markdown](https://tomshine.hashnode.dev/markitdown-markdown)
-- [Tips: Cursor 免费试用重置](https://tomshine.hashnode.dev/tips-cursor)
-- [工具推荐：cmd-wrapped - 查看命令行使用](https://tomshine.hashnode.dev/cmd-wrapped)
 <!-- BLOG-POST-LIST:END -->
 
 <img align="right" alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="500" height="320" />
