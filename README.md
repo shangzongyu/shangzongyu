@@ -1,6 +1,6 @@
 ## Hello, I'm TomShine
 
-> 不忘初心。
+![Typing SVG](https://readme-typing-svg.demolab.com/?lines=不忘初心;生+命+不+熄;Coding+不+止)
 
 [![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian)](https://skillicons.dev)
 
