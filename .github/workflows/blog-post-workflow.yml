@@ -16,4 +16,4 @@ jobs:
       - name: Pull in blog's posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "https://tomshine.hashnode.dev/rss.xml"
+          feed_list: "https://shangzongu.github.io"
