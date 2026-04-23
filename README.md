@@ -4,19 +4,24 @@
 
 [![My Skills](https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian)](https://skillicons.dev)
 
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api?username=shangzongyu&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff&hide_title=true" alt="GitHub stats" />
+    </td>
+    <td>
+      <img src="./code.gif" alt="Coding GIF" width="500" />
+    </td>
+  </tr>
+</table>
 
-<img align="left" src="https://github-readme-stats.vercel.app/api?username=shangzongyu&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff&hide_title=true" />
-
-![IceEnd's GitHub stats](https://github-immortality.vercel.app/api?username=shangzongyu)
-
-<img align="right" alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="500" height="320" />
+![GitHub summary](https://github-immortality.vercel.app/api?username=shangzongyu)
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shangzongyu)
 
 ![Trophy](https://github-profile-trophy.vercel.app/?username=shangzongyu)
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=shangzongyu&left_color=green&right_color=red)
-
 
 ![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=shangzongyu)
 
