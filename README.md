@@ -44,5 +44,5 @@
 ## Latest Posts
 
 <!-- BLOG-POST-LIST:START -->
-- Updating from Hugo posts repository...
+- No posts found.
 <!-- BLOG-POST-LIST:END -->
