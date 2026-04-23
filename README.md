@@ -1,7 +1,7 @@
 <h1 align="center">TomShine</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?lines=不忘初心;生命不熄;Coding不止&center=true&vCenter=true&size=24" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=520&lines=Keep+building+useful+things;Systems+Tools+Backend;Coding+never+stops" alt="Typing SVG" />
 </p>
 
 <p align="center">
