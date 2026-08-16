@@ -21,7 +21,7 @@
 <table>
   <tr>
     <td width="56%">
-      <img src="https://github-readme-stats.vercel.app/api?username=shangzongyu&show_icons=true&hide_title=true&icon_color=dd6b20&text_color=2d3748&title_color=2f855a&bg_color=ffffff&border_color=e2e8f0" alt="GitHub stats" />
+      <img src="https://github-readme-stats.shion.dev/api?username=shangzongyu&show_icons=true&hide_title=true&icon_color=dd6b20&text_color=2d3748&title_color=2f855a&bg_color=ffffff&border_color=e2e8f0" alt="GitHub stats" />
     </td>
     <td width="44%">
       <img src="./code.gif" alt="Coding GIF" width="100%" />
@@ -30,7 +30,7 @@
 </table>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shangzongyu&layout=compact&text_color=2d3748&title_color=2f855a&bg_color=ffffff&border_color=e2e8f0" alt="Top Langs" />
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=shangzongyu&layout=compact&text_color=2d3748&title_color=2f855a&bg_color=ffffff&border_color=e2e8f0" alt="Top Langs" />
 </p>
 
 <p align="center">
