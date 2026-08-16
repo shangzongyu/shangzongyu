@@ -11,14 +11,16 @@ This is a GitHub profile repository (`shangzongyu/shangzongyu`) — the special 
 
 ## Blog Post Sync Script
 
-The script `scripts/update_readme_from_hugo.py` reads Hugo markdown posts from `blog_repo/content/posts/` (a sibling checkout cloned at runtime by CI), parses YAML front matter, sorts posts by date, and rewrites the `<!-- BLOG-POST-LIST:START -->` / `<!-- BLOG-POST-LIST:END -->` block in `README.md`.
+The script `scripts/update_readme_from_hugo.py` fetches the Hugo blog's RSS feed (`https://shangzongyu.github.io/index.xml`), parses the latest posts (title, permalink, date), and rewrites the `<!-- BLOG-POST-LIST:START -->` / `<!-- BLOG-POST-LIST:END -->` block in `README.md`. Using the RSS feed means the links always match the live site's real permalinks and drafts are excluded automatically.
 
-Run it manually (requires `blog_repo/` to exist):
+Run it manually (no local blog checkout required):
 ```bash
 python scripts/update_readme_from_hugo.py
 ```
 
 Key constants in the script:
-- `POSTS_DIR = Path("blog_repo/content/posts")` — source of Hugo posts
-- `BLOG_BASE_URL = "https://shangzongyu.github.io"` — base URL for post links
+- `RSS_URL = "https://shangzongyu.github.io/index.xml"` — source feed
+- `README_START` / `README_END` — the markers delimiting the auto-generated block
 - `POST_LIMIT = 5` — number of latest posts shown
+
+The workflow `.github/workflows/update-readme-from-blog.yml` runs this on a schedule (every 6 hours) and commits any change.

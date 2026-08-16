@@ -1,17 +1,17 @@
 from __future__ import annotations
 
-import re
 from dataclasses import dataclass
 from datetime import datetime
+from email.utils import parsedate_to_datetime
 from pathlib import Path
-from urllib.parse import quote
+from urllib.request import Request, urlopen
+from xml.etree import ElementTree as ET
 
 
 README_PATH = Path("README.md")
-POSTS_DIR = Path("blog_repo/content/posts")
 README_START = "<!-- BLOG-POST-LIST:START -->"
 README_END = "<!-- BLOG-POST-LIST:END -->"
-BLOG_BASE_URL = "https://shangzongyu.github.io"
+RSS_URL = "https://shangzongyu.github.io/index.xml"
 POST_LIMIT = 5
 
 
@@ -22,79 +22,82 @@ class Post:
     url: str
 
 
-def parse_front_matter(content: str) -> dict[str, str]:
-    if not content.startswith("---\n"):
-        return {}
+def _local(tag: str) -> str:
+    """Strip an XML namespace: '{http://...}title' -> 'title'."""
+    return tag.rsplit("}", 1)[-1]
 
-    parts = content.split("---\n", 2)
-    if len(parts) < 3:
-        return {}
 
-    front_matter = parts[1]
-    data: dict[str, str] = {}
+def _child_text(element: ET.Element, name: str) -> str:
+    for child in element:
+        if _local(child.tag) == name and child.text:
+            return child.text.strip()
+    return ""
 
-    for line in front_matter.splitlines():
-        if ":" not in line:
-            continue
-        key, value = line.split(":", 1)
-        data[key.strip()] = value.strip().strip("\"'")
 
-    return data
+def _child_attr(element: ET.Element, name: str, attr: str) -> str:
+    for child in element:
+        if _local(child.tag) == name and child.get(attr):
+            return child.get(attr).strip()
+    return ""
+
+
+def _escape_link_text(text: str) -> str:
+    """Make a title safe to use as Markdown link text."""
+    return (
+        text.replace("\\", "\\\\")
+        .replace("[", "\\[")
+        .replace("]", "\\]")
+        .replace("\n", " ")
+        .strip()
+    )
 
 
 def parse_date(raw: str) -> datetime:
     raw = raw.strip()
-    formats = (
-        "%Y-%m-%dT%H:%M:%S%z",
-        "%Y-%m-%dT%H:%M:%SZ",
-        "%Y-%m-%d %H:%M:%S",
-        "%Y-%m-%d",
-    )
+    if not raw:
+        raise ValueError("empty date")
 
-    normalized = raw.replace("Z", "+0000")
-    for fmt in formats:
-        try:
-            if fmt == "%Y-%m-%dT%H:%M:%SZ":
-                return datetime.strptime(raw, fmt)
-            return datetime.strptime(normalized, fmt)
-        except ValueError:
-            continue
+    # RSS <pubDate> uses RFC 822/2822.
+    try:
+        parsed = parsedate_to_datetime(raw)
+        if parsed:
+            return parsed
+    except (TypeError, ValueError):
+        pass
+
+    # Atom <updated>/<published> use ISO 8601.
+    try:
+        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        pass
 
     raise ValueError(f"Unsupported date format: {raw}")
 
 
-def slugify(text: str) -> str:
-    text = text.strip().lower()
-    text = re.sub(r"\s+", "-", text)
-    text = re.sub(r"[^a-z0-9\-\u4e00-\u9fff]", "", text)
-    return quote(text)
+def fetch_feed(url: str) -> str:
+    request = Request(url, headers={"User-Agent": "github-profile-blog-sync/1.0"})
+    with urlopen(request, timeout=30) as response:
+        return response.read().decode("utf-8", errors="replace")
 
 
-def build_post_url(meta: dict[str, str], file_path: Path) -> str:
-    slug = meta.get("slug") or meta.get("url") or file_path.stem
-
-    if slug.startswith("http://") or slug.startswith("https://"):
-        return slug
-
-    if slug.startswith("/"):
-        return f"{BLOG_BASE_URL}{slug}"
-
-    if "/" in slug:
-        return f"{BLOG_BASE_URL}/{slug.strip('/')}/"
-
-    return f"{BLOG_BASE_URL}/posts/{slugify(slug)}/"
-
-
-def collect_posts() -> list[Post]:
+def parse_feed(xml_text: str) -> list[Post]:
+    root = ET.fromstring(xml_text)
     posts: list[Post] = []
 
-    for path in POSTS_DIR.rglob("*.md"):
-        content = path.read_text(encoding="utf-8")
-        meta = parse_front_matter(content)
-        title = meta.get("title")
-        date_raw = meta.get("date")
+    for element in root.iter():
+        tag = _local(element.tag)
+        if tag == "item":  # RSS 2.0
+            title = _child_text(element, "title")
+            url = _child_text(element, "link")
+            date_raw = _child_text(element, "pubDate")
+        elif tag == "entry":  # Atom
+            title = _child_text(element, "title")
+            url = _child_attr(element, "link", "href")
+            date_raw = _child_text(element, "updated") or _child_text(element, "published")
+        else:
+            continue
 
-        if not title or not date_raw:
+        if not title or not url:
             continue
 
         try:
@@ -102,15 +105,9 @@ def collect_posts() -> list[Post]:
         except ValueError:
             continue
 
-        posts.append(
-            Post(
-                title=title,
-                date=date,
-                url=build_post_url(meta, path),
-            )
-        )
+        posts.append(Post(title=title, date=date, url=url))
 
-    posts.sort(key=lambda item: item.date, reverse=True)
+    posts.sort(key=lambda post: post.date.timestamp(), reverse=True)
     return posts[:POST_LIMIT]
 
 
@@ -119,7 +116,7 @@ def render_posts(posts: list[Post]) -> str:
         lines = ["- No posts found."]
     else:
         lines = [
-            f"- [{post.title}]({post.url}) · {post.date.strftime('%Y-%m-%d')}"
+            f"- [{_escape_link_text(post.title)}]({post.url}) · {post.date.strftime('%Y-%m-%d')}"
             for post in posts
         ]
 
@@ -146,7 +143,8 @@ def update_readme(block: str) -> None:
 
 
 def main() -> None:
-    posts = collect_posts()
+    xml_text = fetch_feed(RSS_URL)
+    posts = parse_feed(xml_text)
     block = render_posts(posts)
     update_readme(block)
 

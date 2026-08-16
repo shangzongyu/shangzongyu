@@ -15,12 +15,6 @@ jobs:
       - name: Checkout profile repo
         uses: actions/checkout@v4
 
-      - name: Checkout blog repo
-        uses: actions/checkout@v4
-        with:
-          repository: shangzongyu/shangzongyu.github.io
-          path: blog_repo
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
