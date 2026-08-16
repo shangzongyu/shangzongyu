@@ -5,28 +5,20 @@ on:
     - cron: "0 */6 * * *"
   workflow_dispatch:
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+permissions:
+  contents: write
 
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout profile repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Pull in latest blog posts
+        uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          python-version: "3.11"
-
-      - name: Update README latest posts
-        run: python scripts/update_readme_from_hugo.py
-
-      - name: Commit changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git diff --cached --quiet || git commit -m "chore: update latest blog posts"
-          git push
+          feed_list: "https://shangzongyu.github.io/index.xml"
+          max_post_count: 5
+          gh_token: ${{ secrets.GITHUB_TOKEN }}

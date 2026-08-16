@@ -7,20 +7,17 @@ This is a GitHub profile repository (`shangzongyu/shangzongyu`) — the special 
 
 - `README.md` — the profile page rendered by GitHub
 - `code.gif` — animation used in the README
-- `scripts/update_readme_from_hugo.py` — script that syncs latest blog posts into the README
+- `.github/workflows/update-readme-from-blog.yml` — GitHub Action that syncs latest blog posts into the README
 
-## Blog Post Sync Script
+## Blog Post Sync
 
-The script `scripts/update_readme_from_hugo.py` fetches the Hugo blog's RSS feed (`https://shangzongyu.github.io/index.xml`), parses the latest posts (title, permalink, date), and rewrites the `<!-- BLOG-POST-LIST:START -->` / `<!-- BLOG-POST-LIST:END -->` block in `README.md`. Using the RSS feed means the links always match the live site's real permalinks and drafts are excluded automatically.
+The workflow `.github/workflows/update-readme-from-blog.yml` uses the [`gautamkrishnar/blog-post-workflow`](https://github.com/gautamkrishnar/blog-post-workflow) action to fetch the Hugo blog's RSS feed (`https://shangzongyu.github.io/index.xml`) and rewrite the `<!-- BLOG-POST-LIST:START -->` / `<!-- BLOG-POST-LIST:END -->` block in `README.md`.
 
-Run it manually (no local blog checkout required):
-```bash
-python scripts/update_readme_from_hugo.py
-```
+Using the RSS feed means the links always match the live site's real permalinks and drafts are excluded automatically.
 
-Key constants in the script:
-- `RSS_URL = "https://shangzongyu.github.io/index.xml"` — source feed
-- `README_START` / `README_END` — the markers delimiting the auto-generated block
-- `POST_LIMIT = 5` — number of latest posts shown
+Key settings in the workflow:
+- `feed_list` — `https://shangzongyu.github.io/index.xml`
+- `max_post_count` — `5` (number of latest posts shown)
+- schedule — every 6 hours (`0 */6 * * *`), plus `workflow_dispatch` for manual runs
 
-The workflow `.github/workflows/update-readme-from-blog.yml` runs this on a schedule (every 6 hours) and commits any change.
+> Note: GitHub requires the repository's Actions "Workflow permissions" to be set to **Read and write permissions** so the action can commit the README update.
