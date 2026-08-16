@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>Systems</b> · <b>Tools</b> · <b>Backend</b>
+  <b>Systems</b> · <b>Tools</b> · <b>AI</b> · <b>Agent</b> · <b>Backend</b>
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=linux,c,cpp,go,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian" alt="My Skills" />
+    <img src="https://skillicons.dev/icons?i=apple,linux,c,cpp,rust,go,ts,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian" alt="My Skills" />
   </a>
 </p>
 
