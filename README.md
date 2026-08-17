@@ -8,15 +8,12 @@
   <b>Systems</b> · <b>Tools</b> · <b>AI</b> · <b>Agent</b> · <b>Backend</b>
 </p>
 
-<p align="left">
+<div align="center" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
   <img src="https://komarev.com/ghpvc/?username=shangzongyu&color=dd6b20&style=flat-square" alt="Profile views" />
-</p>
-
-<p align="right">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=apple,linux,c,cpp,rust,go,ts,py,lua,emacs,vim,neovim,vscode,md,redis,mysql,sqlite,postgres,nginx,fastapi,obsidian" alt="My Skills" />
   </a>
-</p>
+</div>
 
 ---
 
