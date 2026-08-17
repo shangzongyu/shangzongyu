@@ -32,10 +32,6 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shangzongyu&bg_color=ffffff&color=2d3748&line=2f855a&point=dd6b20&hide_border=false" alt="GitHub Activity Graph" />
-</p>
-
-<p align="center">
   <img src="./code.gif" alt="Coding GIF" width="360" />
 </p>
 
