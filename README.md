@@ -25,10 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=shangzongyu&ring=dd6b20&fire=dd6b20&currStreakLabel=2f855a&sideLabels=2d3748&dates=718096&border=e2e8f0" alt="GitHub Streak" />
-</p>
-
-<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=shangzongyu&ring=dd6b20&fire=dd6b20&currStreakLabel=2f855a&sideLabels=2d3748&dates=718096&border=e2e8f0" alt="GitHub Streak" width="460" />
   <img src="./code.gif" alt="Coding GIF" width="360" />
 </p>
 
