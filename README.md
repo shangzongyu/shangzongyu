@@ -34,9 +34,9 @@
 ## ✍️ Latest Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [2026 使用 Park 打包 DeepSeek Harness 软件](https://shangzongyu.github.io/p/2026-%E4%BD%BF%E7%94%A8-park-%E6%89%93%E5%8C%85-deepseek-harness-%E8%BD%AF%E4%BB%B6/)
-- [Google Gemini Nano Banana 生成图片的提示词](https://shangzongyu.github.io/p/google-gemini-nano-banana-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%90%E7%A4%BA%E8%AF%8D/)
-- [工具推荐: Diff Tools](https://shangzongyu.github.io/p/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90-diff-tools/)
-- [工具推荐: 版本控制](https://shangzongyu.github.io/p/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/)
-- [2025 我使用过的工具整理](https://shangzongyu.github.io/p/2025-%E6%88%91%E4%BD%BF%E7%94%A8%E8%BF%87%E7%9A%84%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/)
+- [使用 Park 打包 DeepSeek Harness 为桌面端](https://shangzongyu.github.io/p/packaging-deepseek-harness-with-park/)
+- [Google Gemini Nano Banana 生成图片的提示词](https://shangzongyu.github.io/p/gemini-nano-banana-prompts/)
+- [工具推荐: Diff Tools](https://shangzongyu.github.io/p/diff-tools/)
+- [Apple 相关](https://shangzongyu.github.io/p/apple-related/)
+- [工具推荐: 版本控制](https://shangzongyu.github.io/p/version-control/)
 <!-- BLOG-POST-LIST:END -->
